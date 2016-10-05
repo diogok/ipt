@@ -271,6 +271,19 @@ public class AppConfig {
             .path("resource")
             .queryParam(Constants.REQ_PARAM_RESOURCE, shortname).build();
   }
+  /**
+   * @return URI to resource default homepage (no version number) used in DOI registration
+   */
+  @NotNull
+  public URI getResourceArchiveFileUrl(@NotNull String shortname, @NotNull String filename) {
+    Preconditions.checkNotNull(getBaseUrl());
+
+    return UriBuilder.fromPath(getBaseUrl())
+            .path(Constants.REQ_PATH_DWCA_FILE)
+            .queryParam(Constants.REQ_PARAM_RESOURCE, shortname)
+            .queryParam(Constants.REQ_PARAM_FILE, filename+".txt")
+            .build();
+  }
 
   /**
    * @return String URI used as resource EML GUID, similar to resource homepage URI but with id param versus r param

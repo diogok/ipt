@@ -18,6 +18,7 @@ public final class Constants {
   public static final String REQ_PATH_API = "api";
   public static final String REQ_PATH_EML = "eml.do";
   public static final String REQ_PATH_DWCA = "archive.do";
+  public static final String REQ_PATH_DWCA_FILE = "archiveFile.do";
   public static final String REQ_PATH_LOGO = "logo.do";
   public static final String REQ_PARAM_RESOURCE = "r";
   public static final String REQ_PARAM_FILE = "f";
