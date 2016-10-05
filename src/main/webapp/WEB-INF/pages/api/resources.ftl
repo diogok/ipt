@@ -11,9 +11,13 @@
          ,"dwca":"${cfg.getResourceArchiveUrl(resource.shortname)}"
          ,"eml":"${cfg.getResourceEmlUrl(resource.shortname)}"
          ,"resource":"${cfg.getResourceUrl(resource.shortname)}"
+         ,"files":{
          <#list resource.mappings as mapping>
-         ,"${mapping.getExtension().getName().toLowerCase()}.txt":"${cfg.getResourceArchiveFileUrl(resource.shortname,mapping.getExtension().getName().toLowerCase())}"
+          "${mapping.getExtension().getName().toLowerCase()}.txt":"${cfg.getResourceArchiveFileUrl(resource.shortname,mapping.getExtension().getName().toLowerCase()+".txt")}"
+          ,"${mapping.getExtension().getName().toLowerCase()}.txt.gz":"${cfg.getResourceArchiveFileUrl(resource.shortname,mapping.getExtension().getName().toLowerCase()+".txt.gz")}"
+          <#sep>,</#sep>
          </#list>
+         }
     }}<#sep>,</#sep>
     </#list>
     ]

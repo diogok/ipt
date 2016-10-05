@@ -281,7 +281,7 @@ public class AppConfig {
     return UriBuilder.fromPath(getBaseUrl())
             .path(Constants.REQ_PATH_DWCA_FILE)
             .queryParam(Constants.REQ_PARAM_RESOURCE, shortname)
-            .queryParam(Constants.REQ_PARAM_FILE, filename+".txt")
+            .queryParam(Constants.REQ_PARAM_FILE, filename)
             .build();
   }
 
